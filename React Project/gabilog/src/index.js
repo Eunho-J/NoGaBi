@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Gabilog from './components/mainframe/functional/Gabilog';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Gabilog />
   </React.StrictMode>,
   document.getElementById('root')
 );
