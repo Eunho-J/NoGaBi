@@ -7,47 +7,34 @@
   min-width: 100vw;
 }
 
-.body {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  background: rgba(25, 102, 23, 0.199);
-  min-height: calc(100vh - 4.75rem);
-  width: calc(100vw - 1rem);
-  margin: 0.5rem;
-  margin-top: 0.25rem;
-  border-radius: 0.5rem;
-}
-
 .pageIndicator-list {
+  vertical-align: middle;
+  display: inline;
   margin-left: 0.125rem;
   margin-right: 0.125rem;
   cursor: pointer;
 }
 
 .pageIndicator-arrow {
-  cursor: default;
+  vertical-align: middle;
+  display: inline;
 }
 
-.body-index {
-  grid-column: 1;
-  grid-row: 1;
-  min-width: 10rem;
-  width: max-content;
-  padding: 0.5rem;
-  background: rgba(143, 113, 58, 0.233);
-  /* min-height: calc(100vh - 4.75rem); */
-  border-radius: 0.5rem;
-}
-
-.body-text {
-  grid-column: 2;
-  grid-row: 1;
-  width: auto;
-  /* background: magenta; */
+li .pageIndicator-list {
+  margin-left: -0.5rem;
 }
 
 ul {
-  padding-inline-start: 1.5rem;
+  list-style-position: inside;
+  font-size: inherit;
   font-family: 'WandoHope Reg';
-  margin: 0rem;
+  margin: 0;
+  padding: 0;
+  margin-right: 0.125rem;
+}
+
+li {
+  font-size: 0.9em;
+  padding-inline-start: 0.5rem;
+  margin-top: 0.1em;
 }
