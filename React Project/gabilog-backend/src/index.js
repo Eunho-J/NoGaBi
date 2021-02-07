@@ -1,24 +1,24 @@
 const Koa = require('koa');
 const Router = require('koa-router');
+const bodyParser = require('koa-bodyparser');
+
+const api = require('./api');
 
 const app = new Koa();
 const router = new Router();
 
 //라우터 설정 router settings
+
+router.use('/api', api.routes()); // api 라우트 적용
+
 router.get('/', (ctx) => {
   ctx.body = 'home';
 });
 
-router.get('/about/:name?', (ctx) => {
-  const { name } = ctx.params;
-  ctx.body = name ? `Introduction of ${name}` : `Introduction`;
-});
+// 라우터 적용 전에 bodyParser 적용
+app.use(bodyParser());
 
-router.get('/posts', (ctx) => {
-  const { id } = ctx.query;
-  ctx.body = id ? `Post #${id}` : `Post ID not exists!`;
-});
-
+// app 라우터 적용
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(4000, () => {
